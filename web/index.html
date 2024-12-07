@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="fractional_realestate_investing">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>fractional_realestate_investing</title>
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Firebase JavaScript SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js"></script>
+
+  <script>
+    // Your Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBxgccf7Kf6fukUh4rXQ04796ynA5Y5v_A",
+      authDomain: "fractional-realestate-invest.firebaseapp.com",
+      databaseURL: "https://fractional-realestate-invest-default-rtdb.firebaseio.com",
+      projectId: "fractional-realestate-invest",
+      storageBucket: "fractional-realestate-invest.firebasestorage.app",
+      messagingSenderId: "619278053496",
+      appId: "1:619278053496:web:f896d461159095a3c9bd8d",
+      measurementId: "G-HSPTY8FXNC"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const analytics = firebase.analytics(app);
+  </script>
+</head>
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
