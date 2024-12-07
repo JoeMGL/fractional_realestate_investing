@@ -13,7 +13,7 @@ void main() async {
   if (Firebase.apps.isEmpty) {
     print('Initializing Firebase...');
     await Firebase.initializeApp(
-      options: FirebaseOptions(
+      options: const FirebaseOptions(
         apiKey: "AIzaSyBxgccf7Kf6fukUh4rXQ04796ynA5Y5v_A",
         authDomain: "fractional-realestate-invest.firebaseapp.com",
         databaseURL: "https://fractional-realestate-invest-default-rtdb.firebaseio.com",

@@ -61,7 +61,7 @@ class _DropzoneWidgetState extends State<DropzoneWidget> {
           ),
         ),
         if (!_isFileDropped)
-          Center(
+          const Center(
             child: Text(
               'Drag & Drop Image Here',
               style: TextStyle(color: Colors.white, fontSize: 16),
@@ -71,7 +71,7 @@ class _DropzoneWidgetState extends State<DropzoneWidget> {
           Center(
             child: Text(
               _uploadedFileName.isEmpty ? 'Uploading...' : _uploadedFileName,
-              style: TextStyle(color: Colors.green, fontSize: 16),
+              style: const TextStyle(color: Colors.green, fontSize: 16),
             ),
           ),
       ],

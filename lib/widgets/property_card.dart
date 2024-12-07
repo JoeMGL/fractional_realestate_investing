@@ -24,26 +24,26 @@ class PropertyCard extends StatelessWidget {
         color: Colors.grey[200],
         borderRadius: BorderRadius.circular(8.0),
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             price,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 4),
-          Text(details, style: TextStyle(fontSize: 14)),
-          SizedBox(height: 8),
+          const SizedBox(height: 4),
+          Text(details, style: const TextStyle(fontSize: 14)),
+          const SizedBox(height: 8),
           ElevatedButton(
             onPressed: () {
               _trackButtonClick();
               Navigator.pushNamed(context, '/property-details');
             },
-            child: Text('View Property'),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.grey,
             ),
+            child: const Text('View Property'),
           ),
         ],
       ),

@@ -27,13 +27,13 @@ class _AdminPanelState extends State<AdminPanel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Admin Panel',
           style: TextStyle(color: Colors.white), // Title in white
         ),
         backgroundColor: Colors.black87,
         iconTheme:
-            IconThemeData(color: Colors.white), // Hamburger icon in white
+            const IconThemeData(color: Colors.white), // Hamburger icon in white
       ),
       drawer: Drawer(
         child: Container(
@@ -45,7 +45,7 @@ class _AdminPanelState extends State<AdminPanel> {
                 decoration: BoxDecoration(
                   color: Colors.grey[800],
                 ),
-                child: Text(
+                child: const Text(
                   'Menu',
                   style: TextStyle(
                     color: Colors.white,
@@ -54,8 +54,8 @@ class _AdminPanelState extends State<AdminPanel> {
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.people, color: Colors.white),
-                title: Text('Users', style: TextStyle(color: Colors.white)),
+                leading: const Icon(Icons.people, color: Colors.white),
+                title: const Text('Users', style: TextStyle(color: Colors.white)),
                 selected: _currentView == 'users',
                 selectedTileColor: Colors.grey[800],
                 onTap: () {
@@ -66,9 +66,9 @@ class _AdminPanelState extends State<AdminPanel> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.home, color: Colors.white),
+                leading: const Icon(Icons.home, color: Colors.white),
                 title:
-                    Text('Properties', style: TextStyle(color: Colors.white)),
+                    const Text('Properties', style: TextStyle(color: Colors.white)),
                 selected: _currentView == 'properties',
                 selectedTileColor: Colors.grey[800],
                 onTap: () {
@@ -79,9 +79,9 @@ class _AdminPanelState extends State<AdminPanel> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.attach_money, color: Colors.white),
+                leading: const Icon(Icons.attach_money, color: Colors.white),
                 title:
-                    Text('Investments', style: TextStyle(color: Colors.white)),
+                    const Text('Investments', style: TextStyle(color: Colors.white)),
                 selected: _currentView == 'investments',
                 selectedTileColor: Colors.grey[800],
                 onTap: () {

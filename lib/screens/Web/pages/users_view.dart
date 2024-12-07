@@ -40,7 +40,7 @@ class _UsersViewState extends State<UsersView> with SingleTickerProviderStateMix
           indicatorColor: Colors.blueAccent,
           labelColor: Colors.white,
           unselectedLabelColor: Colors.grey,
-          tabs: [
+          tabs: const [
             Tab(text: 'All'),
             Tab(text: 'Active'),
             Tab(text: 'Pending'),
@@ -65,7 +65,7 @@ class _UsersViewState extends State<UsersView> with SingleTickerProviderStateMix
             });
           },
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Expanded(
           child: StreamBuilder<QuerySnapshot>(
             stream: _getFilteredUsers(),
@@ -74,13 +74,13 @@ class _UsersViewState extends State<UsersView> with SingleTickerProviderStateMix
                 return Center(
                   child: Text(
                     'Error: ${snapshot.error}',
-                    style: TextStyle(color: Colors.red),
+                    style: const TextStyle(color: Colors.red),
                   ),
                 );
               }
 
               if (!snapshot.hasData) {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
 
               final userDocs = snapshot.data!.docs;
@@ -90,7 +90,7 @@ class _UsersViewState extends State<UsersView> with SingleTickerProviderStateMix
                 child: DataTable(
                   columnSpacing: 16.0,
                   headingRowColor: MaterialStateProperty.all(Colors.grey[800]),
-                  columns: [
+                  columns: const [
                     DataColumn(
                       label: Text('Name', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                     ),
@@ -118,15 +118,15 @@ class _UsersViewState extends State<UsersView> with SingleTickerProviderStateMix
 
                     return DataRow(
                       cells: [
-                        DataCell(Text(userData['name'] ?? 'N/A', style: TextStyle(color: Colors.white))),
-                        DataCell(Text(userData['email'] ?? 'N/A', style: TextStyle(color: Colors.white))),
-                        DataCell(Text(userData['phone'] ?? 'N/A', style: TextStyle(color: Colors.white))),
-                        DataCell(Text(userData['signup_date'] ?? 'N/A', style: TextStyle(color: Colors.white))),
-                        DataCell(Text(userData['investment_value'] ?? 'N/A', style: TextStyle(color: Colors.white))),
-                        DataCell(Text(userData['investment_count']?.toString() ?? '0', style: TextStyle(color: Colors.white))),
+                        DataCell(Text(userData['name'] ?? 'N/A', style: const TextStyle(color: Colors.white))),
+                        DataCell(Text(userData['email'] ?? 'N/A', style: const TextStyle(color: Colors.white))),
+                        DataCell(Text(userData['phone'] ?? 'N/A', style: const TextStyle(color: Colors.white))),
+                        DataCell(Text(userData['signup_date'] ?? 'N/A', style: const TextStyle(color: Colors.white))),
+                        DataCell(Text(userData['investment_value'] ?? 'N/A', style: const TextStyle(color: Colors.white))),
+                        DataCell(Text(userData['investment_count']?.toString() ?? '0', style: const TextStyle(color: Colors.white))),
                         DataCell(
                           Container(
-                            padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+                            padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
                             decoration: BoxDecoration(
                               color: userData['status'] == 'active'
                                   ? Colors.green
@@ -137,7 +137,7 @@ class _UsersViewState extends State<UsersView> with SingleTickerProviderStateMix
                             ),
                             child: Text(
                               userData['status']?.toUpperCase() ?? 'N/A',
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ),

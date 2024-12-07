@@ -17,7 +17,7 @@ class _PropertiesViewState extends State<PropertiesView> {
         _locationController.text.isEmpty ||
         _priceController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please fill out all fields')),
+        const SnackBar(content: Text('Please fill out all fields')),
       );
       return;
     }
@@ -30,7 +30,7 @@ class _PropertiesViewState extends State<PropertiesView> {
         'created_at': FieldValue.serverTimestamp(),
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Property added successfully')),
+        const SnackBar(content: Text('Property added successfully')),
       );
       _nameController.clear();
       _locationController.clear();
@@ -53,11 +53,11 @@ class _PropertiesViewState extends State<PropertiesView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Add Property',
                 style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               TextField(
                 controller: _nameController,
                 decoration: InputDecoration(
@@ -67,7 +67,7 @@ class _PropertiesViewState extends State<PropertiesView> {
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               TextField(
                 controller: _locationController,
                 decoration: InputDecoration(
@@ -77,7 +77,7 @@ class _PropertiesViewState extends State<PropertiesView> {
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               TextField(
                 controller: _priceController,
                 decoration: InputDecoration(
@@ -87,16 +87,16 @@ class _PropertiesViewState extends State<PropertiesView> {
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: _addProperty,
-                child: Text('Add Property'),
+                child: const Text('Add Property'),
               ),
             ],
           ),
         ),
-        Divider(color: Colors.grey), // Divider between form and list
-        SizedBox(height: 8),
+        const Divider(color: Colors.grey), // Divider between form and list
+        const SizedBox(height: 8),
         // Properties List
         Expanded(
           child: StreamBuilder<QuerySnapshot>(
@@ -106,13 +106,13 @@ class _PropertiesViewState extends State<PropertiesView> {
                 return Center(
                   child: Text(
                     'Error: ${snapshot.error}',
-                    style: TextStyle(color: Colors.red),
+                    style: const TextStyle(color: Colors.red),
                   ),
                 );
               }
 
               if (!snapshot.hasData) {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
 
               return ListView(
@@ -120,23 +120,23 @@ class _PropertiesViewState extends State<PropertiesView> {
                   final propertyData = doc.data() as Map<String, dynamic>;
                   return Card(
                     color: Colors.grey[900],
-                    margin: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                    margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                     child: ListTile(
                       title: Text(
                         propertyData['name'] ?? 'No Name',
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       ),
                       subtitle: Text(
                         'Location: ${propertyData['location'] ?? 'No Location'} | Price: ${propertyData['price'] ?? 'No Price'}',
-                        style: TextStyle(color: Colors.white70),
+                        style: const TextStyle(color: Colors.white70),
                       ),
                       trailing: IconButton(
-                        icon: Icon(Icons.delete, color: Colors.red),
+                        icon: const Icon(Icons.delete, color: Colors.red),
                         onPressed: () async {
                           try {
                             await doc.reference.delete();
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('Property deleted successfully')),
+                              const SnackBar(content: Text('Property deleted successfully')),
                             );
                           } catch (e) {
                             ScaffoldMessenger.of(context).showSnackBar(

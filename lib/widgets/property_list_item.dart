@@ -31,10 +31,10 @@ class PropertyListItem extends StatelessWidget {
             SnackBar(content: Text('Buy Shares clicked for $name')),
           );
         },
-        child: Text('Buy Shares'),
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.grey,
         ),
+        child: const Text('Buy Shares'),
       ),
     );
   }

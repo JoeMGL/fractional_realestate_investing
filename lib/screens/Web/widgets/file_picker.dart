@@ -50,15 +50,15 @@ class _FilePickerWidgetState extends State<FilePickerWidget> {
       children: [
         ElevatedButton.icon(
           onPressed: _pickFile,
-          icon: Icon(Icons.upload_file),
-          label: Text('Pick Image'),
+          icon: const Icon(Icons.upload_file),
+          label: const Text('Pick Image'),
         ),
         if (_fileName != null)
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text(
               'Selected File: $_fileName',
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
             ),
           ),
       ],

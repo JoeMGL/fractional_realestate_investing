@@ -47,7 +47,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         );
 
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Account created successfully!')),
+          const SnackBar(content: Text('Account created successfully!')),
         );
 
         // Navigate to login or home screen
@@ -94,14 +94,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 // Title
-                Text(
+                const Text(
                   'Sign up',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -109,7 +109,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 // Full Name Field
                 TextFormField(
                   controller: _fullNameController,
@@ -126,7 +126,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     return null;
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 // Email Field
                 TextFormField(
                   controller: _emailController,
@@ -147,7 +147,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     return null;
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 // Password Field
                 TextFormField(
                   controller: _passwordController,
@@ -175,7 +175,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     return null;
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 // Confirm Password Field
                 TextFormField(
                   controller: _confirmPasswordController,
@@ -203,29 +203,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     return null;
                   },
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 // Sign Up Button
                 ElevatedButton(
                   onPressed: _isLoading ? null : _signUp,
-                  child: _isLoading
-                      ? CircularProgressIndicator(color: Colors.white)
-                      : Text('Sign Up'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
-                    padding: EdgeInsets.symmetric(vertical: 16),
+                    padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
+                  child: _isLoading
+                      ? const CircularProgressIndicator(color: Colors.white)
+                      : const Text('Sign Up'),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 // Login Link
                 Center(
                   child: TextButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/login');
                     },
-                    child: Text('Already have an account? Log in.'),
+                    child: const Text('Already have an account? Log in.'),
                   ),
                 ),
               ],
